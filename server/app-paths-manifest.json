@@ -1,0 +1,9 @@
+{
+  "/_not-found": "app/_not-found.js",
+  "/page": "app/page.js",
+  "/browse/[slug]/page": "app/browse/[slug]/page.js",
+  "/browse/page": "app/browse/page.js",
+  "/login/page": "app/login/page.js",
+  "/signup/page": "app/signup/page.js",
+  "/signup/register/page": "app/signup/register/page.js"
+}
