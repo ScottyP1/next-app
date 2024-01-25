@@ -2,9 +2,8 @@ import ItemSections from '../../components/browsePage/ItemSections';
 
 export default function Browse() {
 
-
     return (
-        <container className="text-white w-screen ">
+        <div className="text-white w-screen ">
             <div className="bg-[#181818] p-3">
                 <header>
                     <h1 className="text-[40px]">Movies</h1>
@@ -21,6 +20,6 @@ export default function Browse() {
                     <ItemSections caption={'Horror Movies'} />
                 </main>
             </div>
-        </container>
+        </div>
     )
 }

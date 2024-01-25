@@ -6,7 +6,7 @@ export default function FormSubmit({ text }) {
     const { pending } = useFormStatus()
 
     return (
-        <button disabled={pending} className='rounded-sm bg-RED w-full mt-3 h-12 text-white'>
+        <button disabled={pending} className='rounded-sm bg-RED w-full mt-3 h-12 text-white' type='submit'>
             {pending ? 'Submitting' : text}
         </button>
     )

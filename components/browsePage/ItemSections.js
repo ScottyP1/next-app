@@ -3,8 +3,8 @@ import Image from "next/image";
 import GetData from '../../lib/users';
 import Link from "next/link";
 
-export default async function ItemSections({ caption }) {
-    const data = await GetData();
+export default function ItemSections({ caption }) {
+    const data = GetData();
 
     return (
         <div className="mx-auto flex flex-col justify-center mt-6">

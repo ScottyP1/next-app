@@ -1,9 +1,22 @@
+'use client'
 import Link from 'next/link';
 
 import LandingPage from '../components/LandingPage';
 import { IoIosArrowForward } from "react-icons/io";
+// import { useRouter } from 'next/navigation';
+// import { useSession } from 'next-auth/react';
+// import { useEffect } from 'react';
 
 export default function Home() {
+  // const router = useRouter();
+  // const { status } = useSession();
+
+  // useEffect(() => {
+  //   if (status === 'authenticated') {
+  //     router.push('/browse')
+  //   }
+  // }, [router, status]);
+
   return (
     <>
       <header className='p-4 bg-header h-[30em] lg:h-[32em] 2xl:h-[40em] bg-cover w-screen'>
