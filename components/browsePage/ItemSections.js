@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getData } from '../../lib/users';
 import Link from "next/link";
 
-export default async function ItemSections({ caption }) {
+export default function ItemSections({ caption }) {
     const data = getData();
     return (
         <div className="mx-auto flex flex-col justify-center mt-6">
