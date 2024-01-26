@@ -6,8 +6,6 @@ import Link from "next/link";
 export default async function ItemSections({ caption }) {
     const data = await GetData();
 
-    console.log("Error fetching data", data)
-
     return (
         <div className="mx-auto flex flex-col justify-center mt-6">
             <h1 className="text-white">{caption}</h1>
@@ -16,7 +14,7 @@ export default async function ItemSections({ caption }) {
                     {data.map((item, idx) => {
                         return (
                             <div key={idx} className="shrink-0">
-                                <Link href={`/browse/${item.slug}`}>
+                                <Link href={`/browse/${item.slug}`} onClick={console.log('Clicked', { item })}>
                                     <Image src={`/images/${item.imageCard}`} alt="" width={170} height={100} className="md:w-[300px]" />
                                     <p className="text-center text-[12px] md:text-[20px]">{item.title}</p>
                                 </Link>
