@@ -1,25 +1,11 @@
-'use client'
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { getData } from '@/lib/getData';
 
 export default function ItemSections({ caption }) {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const result = await getData();
-                setData(result);
-            } catch (error) {
-                console.error('Error fetching data', error);
-            }
-        };
-
-        fetchData();
-    }, []);
+    const data = getData();
 
     return (
         <div className="mx-auto flex flex-col justify-center mt-6">

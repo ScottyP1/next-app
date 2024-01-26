@@ -1,29 +1,12 @@
-'use client'
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
 
 import { getMovie } from '@/lib/getMovie';
 
 export default function MovieDetails({ params }) {
-    const [movie, setMovie] = useState(null);
-
-    useEffect(() => {
-        const fetchMovie = async () => {
-            try {
-                const movieData = await getMovie(params.slug);
-                setMovie(movieData);
-            } catch (error) {
-                console.error('Error fetching movie', error);
-                notFound();
-            }
-        };
-
-        fetchMovie();
-    }, [params.slug]);
-
+    const movie = getMovie(params.slug);
     if (!movie) {
-        return null; // or some loading/error state
+        return null;
     }
 
     return (
