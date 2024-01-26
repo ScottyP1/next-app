@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
-import { getMovie } from "@/lib/data";
-export default function MovieDetails({ params }) {
-    const movie = getMovie(params.slug);
-    console.log(movie)
+import { getMovie } from "@/lib/users";
+
+export default async function MovieDetails({ params }) {
+    const movie = await getMovie(params.slug);
     if (!movie) {
         notFound();
     };

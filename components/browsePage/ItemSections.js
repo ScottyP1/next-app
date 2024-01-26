@@ -2,10 +2,11 @@ import Image from "next/image";
 
 import Link from "next/link";
 
-import { getData } from "@/lib/data";
+import { getData } from "@/lib/users";
 
 export default async function ItemSections({ caption }) {
-    const data = getData();
+    const data = await getData();
+
     return (
         <div className="mx-auto flex flex-col justify-center mt-6">
             <h1 className="text-white">{caption}</h1>
