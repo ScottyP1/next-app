@@ -5,8 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build ",
-    "postinstall": "prisma generate",
+    "build": "prisma generate && prisma db push && next build",
     "start": "next start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
