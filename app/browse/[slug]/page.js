@@ -1,10 +1,17 @@
 import React from 'react';
 import Image from 'next/image';
+import supabase from "@/utils/supabase";
+import { cookies } from 'next/headers';
 
-import { getMovie } from '@/lib/users';
+export default async function MovieDetails({ params }) {
+    const cookieStore = cookies()
+    const { data, error } = await supabase
+        .from('Movies')
+        .select()
+        .eq('slug', params.slug);
 
-export default function MovieDetails({ params }) {
-    const movie = getMovie(params.slug);
+    const movie = data[0];
+
     if (!movie) {
         return null;
     }

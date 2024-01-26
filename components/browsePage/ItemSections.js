@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { getData } from '@/lib/users';
+import supabase from "@/utils/supabase";
+import { cookies } from 'next/headers';
 
-export default function ItemSections({ caption }) {
-    const data = getData();
+export default async function ItemSections({ caption }) {
+    const cookieStore = cookies()
+    const { data } = await supabase.from("Movies").select();
 
     return (
         <div className="mx-auto flex flex-col justify-center mt-6">
