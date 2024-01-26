@@ -1,7 +1,8 @@
-import Classes from './GoggleButton.module.css'
+import Classes from './GoggleButton.module.css';
+import { signIn } from "next-auth/react"
 export default function GoogleButton() {
     return (
-        <button className={Classes['gsi-material-button']}>
+        <button onClick={() => signIn('google')} className={Classes['gsi-material-button']}>
             <div className={Classes['gsi-material-button-state']}></div>
             <div className={Classes['gsi-material-button-content-wrapper']}>
                 <div className={Classes['gsi-material-button-icon']}>
