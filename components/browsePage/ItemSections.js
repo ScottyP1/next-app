@@ -1,8 +1,7 @@
 import Image from "next/image";
-
-import { getData } from '../../lib/users';
 import Link from "next/link";
 
+import { getData } from "@/lib/getData";
 export default function ItemSections({ caption }) {
     const data = getData();
     return (

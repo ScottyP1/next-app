@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { getMovie } from "@/lib/users";
+import { getMovie } from "@/lib/getMovie";
 export default async function MovieDetails({ params }) {
     console.log('movie slug 1')
     const movie = await getMovie(params.slug);
