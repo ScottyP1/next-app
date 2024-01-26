@@ -3,19 +3,6 @@ import { notFound, redirect } from "next/navigation";
 
 import { getMovie } from "../../../lib/users";
 
-export async function generateMetadata({ params }) {
-    const movie = getMovie(params.slug);
-    console.log(movie)
-    if (!movie) {
-        notFound();
-    };
-    return {
-        title: movie.title,
-        description: movie.description
-    }
-}
-
-
 export default function MovieDetails({ params }) {
     const movie = getMovie(params.slug);
     if (!movie) {
