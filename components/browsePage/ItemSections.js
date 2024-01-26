@@ -3,8 +3,13 @@ import Image from "next/image";
 import GetData from '../../lib/users';
 import Link from "next/link";
 
-export default function ItemSections({ caption }) {
-    const data = GetData();
+export default async function ItemSections({ caption }) {
+    try {
+        const data = await GetData();
+
+    } catch (error) {
+        console.log("Error fetching data", error, data)
+    }
 
     return (
         <div className="mx-auto flex flex-col justify-center mt-6">
