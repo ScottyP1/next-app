@@ -14,10 +14,10 @@ export default function Browse() {
                 </header>
                 <main className=" mt-6">
                     <ItemSections caption={'Popular on Netflix'} />
-                    <ItemSections caption={'Suspenseful Movies'} />
+                    {/* <ItemSections caption={'Suspenseful Movies'} />
                     <ItemSections caption={'Comedy Movies'} />
                     <ItemSections caption={'Released in the Past Year'} />
-                    <ItemSections caption={'Horror Movies'} />
+                    <ItemSections caption={'Horror Movies'} /> */}
                 </main>
             </div>
         </div>

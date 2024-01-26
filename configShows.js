@@ -82,6 +82,7 @@ const data = [
         imageBg: 'te3-bg.jpg',
         imageIcon: 'te3-icon.png'
     },
+
 ]
 
 
