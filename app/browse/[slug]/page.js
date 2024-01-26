@@ -1,15 +1,29 @@
-import Image from "next/image";
-import { notFound } from "next/navigation";
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
-import { getMovie } from "@/lib/getMovie";
-export default async function MovieDetails({ params }) {
-    console.log('movie slug 1')
-    const movie = await getMovie(params.slug);
-    console.log('movie slug 2')
+import { getMovie } from '@/lib/getMovie';
+
+export default function MovieDetails({ params }) {
+    const [movie, setMovie] = useState(null);
+
+    useEffect(() => {
+        const fetchMovie = async () => {
+            try {
+                const movieData = await getMovie(params.slug);
+                setMovie(movieData);
+            } catch (error) {
+                console.error('Error fetching movie', error);
+                notFound();
+            }
+        };
+
+        fetchMovie();
+    }, [params.slug]);
 
     if (!movie) {
-        notFound();
-    };
+        return null; // or some loading/error state
+    }
 
     return (
         <div className="justify-self-end">
@@ -27,13 +41,14 @@ export default async function MovieDetails({ params }) {
                         |
                         <li className="mx-2">{movie.audience}</li>
                     </ul>
-                </section >
+                </section>
                 <section className="text-white mt-3">
                     <p>{movie.description}</p>
-                    <p className="text-[14px] mt-3"><span className="text-[#888888]">Staring: </span> {movie.cast}</p>
+                    <p className="text-[14px] mt-3">
+                        <span className="text-[#888888]">Starring: </span> {movie.cast}
+                    </p>
                 </section>
             </div>
         </div>
-    )
-
+    );
 }
