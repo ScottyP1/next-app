@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import getMovie from '@/lib/getMovie';
+import { getMovie } from '@/lib/users';
 
 export default function MovieDetails({ params }) {
     const movie = getMovie(params.slug);

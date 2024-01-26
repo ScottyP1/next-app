@@ -1,6 +1,7 @@
+// const sqlite3 = require('sqlite3').verbose();
+const sql = require('better-sqlite3')
 
-// init-db.js
-const db = require('./lib/db');
+const db = sql('Data.db');
 
 const data = [
     {
@@ -82,41 +83,44 @@ const data = [
         imageIcon: 'te3-icon.png'
     },
 
-];
+]
 
-db.serialize(() => {
-    db.run(`
-        CREATE TABLE IF NOT EXISTS Data (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            slug TEXT NOT NULL,
-            title TEXT NOT NULL,
-            cast TEXT NOT NULL,
-            rating TEXT NOT NULL,
-            year TEXT NOT NULL,
-            length TEXT NOT NULL,
-            audience TEXT NOT NULL,
-            description TEXT NOT NULL,
-            imageCard TEXT NOT NULL,
-            imageBg TEXT NOT NULL,
-            imageIcon TEXT NOT NULL
-        )
-    `);
 
-    const insertStmt = db.prepare(`
-        INSERT INTO Data (
-            slug, title, cast, rating, year, length, audience, description, imageCard, imageBg, imageIcon
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `);
+db.prepare(`CREATE TABLE IF NOT EXISTS Data (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        slug NOT NULL,
+        title TEXT NOT NULL,
+        cast TEXT  NOT NULL,
+        rating TEXT NOT NULL,
+        year TEXT NOT NULL,
+        length TEXT NOT NULL,
+        audience TEXT NOT NULL,
+        description TEXT NOT NULL,
+        imageCard TEXT NOT NULL,
+        imageBg TEXT NOT NULL,
+        imageIcon TEXT NOT NULL
+)`).run()
 
+async function initData() {
+    const stmt = db.prepare(`
+    INSERT INTO Data VALUES(
+        null,
+        @slug,
+        @title,
+        @cast,
+        @rating,
+        @year,
+        @length,
+        @audience,
+        @description,
+        @imageCard,
+        @imageBg,
+        @imageIcon       
+)`);
     for (const item of data) {
-        insertStmt.run(
-            item.slug, item.title, item.cast, item.rating, item.year,
-            item.length, item.audience, item.description, item.imageCard,
-            item.imageBg, item.imageIcon
-        );
+        stmt.run(item)
     }
+}
 
-    insertStmt.finalize();
-});
+initData();
 
-db.close();
