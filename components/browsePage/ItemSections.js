@@ -4,12 +4,9 @@ import GetData from '../../lib/users';
 import Link from "next/link";
 
 export default async function ItemSections({ caption }) {
-    try {
-        const data = await GetData();
+    const data = await GetData();
 
-    } catch (error) {
-        console.log("Error fetching data", error, data)
-    }
+    console.log("Error fetching data", data)
 
     return (
         <div className="mx-auto flex flex-col justify-center mt-6">
