@@ -5,6 +5,7 @@ import { getMovie } from "../../../lib/users";
 
 export default function MovieDetails({ params }) {
     const movie = getMovie(params.slug);
+    console.log(movie)
     if (!movie) {
         notFound();
     };
