@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import GetData from '../../lib/users';
+import GetData from '../../lib/data';
 import Link from "next/link";
 
 

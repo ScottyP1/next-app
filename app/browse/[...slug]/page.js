@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { notFound, redirect } from "next/navigation";
 
-import { getMovie } from "../../../lib/users";
+import { getMovie } from "../../../lib/data";
 
 export default function MovieDetails({ params }) {
     const movie = getMovie(params.slug);

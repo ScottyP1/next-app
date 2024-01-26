@@ -1,7 +1,7 @@
 // const sqlite3 = require('sqlite3').verbose();
 const sql = require('better-sqlite3')
 
-const db = sql('Users.db');
+const db = sql('Data.db');
 
 const data = [
     {
