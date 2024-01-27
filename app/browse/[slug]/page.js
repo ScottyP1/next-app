@@ -18,8 +18,10 @@ export default async function MovieDetails({ params }) {
 
     return (
         <div className="justify-self-end">
-            <Image src={`/images/${movie.imageBg}`} alt="" width={433} height={500} />
-            <Image src={`/images/${movie.imageIcon}`} alt="" width={348} height={150} className="ml-8" />
+            <Image src={supabase.storage.from('NetflixImages').getPublicUrl(movie.imageBg).data.publicUrl}
+                alt="" width={433} height={500} className='md:w-[600px]' />
+            <Image src={supabase.storage.from('NetflixImages').getPublicUrl(movie.imageIcon).data.publicUrl}
+                alt="" width={348} height={150} className="ml-8" />
             <div className="p-6">
                 <h1 className="text-white text-[22px] font-semibold">{movie.title}</h1>
                 <section className="text-[#888888]">
