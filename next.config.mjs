@@ -2,7 +2,13 @@
 const nextConfig = {
     // next.config.js
     images: {
-        domains: ['ocawolyqyqdehrepqztj.supabase.co', 'daisyui.com'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'ocawolyqyqdehrepqztj.supabase.co',
+                pathname: '**'
+            }
+        ],
     },
 };
 

@@ -7,12 +7,14 @@ import supabase from "@/utils/supabase";
 
 export default function TvShows() {
     const cookieStore = cookies()
+
     return (
         <div className="text-white w-screen ">
             <div className='bg-[#181818]'>
                 <header>
-                    <video autoPlay muted playsInline loop className="object-cover absolute w-[800px] h-[300px] md:h-[800px] md:w-[2000px]">
-                        <source src={supabase.storage.from('NetflixImages').getPublicUrl('rickandmorty.mp4').data.publicUrl} />
+                    <video poster={supabase.storage.from('NetflixImages').getPublicUrl('poster.jpg').data.publicUrl}
+                        muted playsInline autoPlay className="object-cover absolute w-[800px] h-[300px] md:h-[800px] md:w-[2000px]">
+                        <source src={supabase.storage.from('NetflixImages').getPublicUrl('rickandmorty.mp4').data.publicUrl} type="video/mp4" />
                     </video>
                 </header>
                 <div className='relative top-[100px] bg-transparent'>
