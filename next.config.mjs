@@ -2,7 +2,7 @@
 const nextConfig = {
     // next.config.js
     images: {
-        domains: ['ocawolyqyqdehrepqztj.supabase.co'],
+        domains: ['ocawolyqyqdehrepqztj.supabase.co', 'daisyui.com'],
     },
 };
 

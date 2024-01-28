@@ -1,7 +1,7 @@
 export default function MovieDetailsLayout({ children }) {
 
     return (
-        <main className="bg-[#0a090a] h-screen">
+        <main className="bg-[#181818] h-screen">
             {children}
         </main>
     )
