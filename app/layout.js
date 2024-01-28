@@ -15,6 +15,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="en" className={roboto.className}>
+      <meta name="google-site-verification" content="zQEd6I58WQEdE6WNKQklg8z6U0u68388at3Rsdkjzh4" />
       <body suppressHydrationWarning={true}>
 
         <AuthProvider>
