@@ -9,7 +9,7 @@ export default function Card({ title, body, vSrc, imgSrc }) {
                 {vSrc ?
                     <div>
                         <video autoPlay playsInline muted loop
-                            className='object-cover absolute top-[1008px] lg:top-[1008px] xl:top-[1010px] 2xl:top-[1140px] left-[60px] md:left-[100px] lg:left-[265px] xl:left-[525px] 2xl:left-[718px] w-[310px] md:w-[480px]'>
+                            className='object-cover absolute top-[968px] lg:top-[1008px] xl:top-[1010px] 2xl:top-[1140px] left-[60px] md:left-[100px] lg:left-[265px] xl:left-[525px] 2xl:left-[718px] w-[310px] md:w-[480px]'>
                             <source src={vSrc} type='video/mp4' />
                         </video>
                         <div className='relative'>
