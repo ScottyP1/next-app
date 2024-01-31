@@ -1,6 +1,7 @@
 'use client'
 import GoogleButton from "@/components/GoogleButton";
 import { signIn } from "next-auth/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -59,6 +60,9 @@ const LoginPage = () => {
                     </p>
                     <button type="submit" className="rounded-sm text-center bg-RED w-full">Login</button>
                 </form>
+                <div className="pt-3">
+                    <p className="text-slate-400">New to Netflix? <span className="text-white hover:text-sky-200"><Link href={'/signup/register'}>Sign up now.</Link></span></p>
+                </div>
             </div >
         </main >
     )
