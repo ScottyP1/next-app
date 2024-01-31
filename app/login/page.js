@@ -59,10 +59,6 @@ const LoginPage = () => {
                     </p>
                     <button type="submit" className="rounded-sm text-center bg-RED w-full">Login</button>
                 </form>
-                <h1 className="text-center text-[20px]">or</h1>
-                <div className="text-center">
-                    <GoogleButton />
-                </div>
             </div >
         </main >
     )

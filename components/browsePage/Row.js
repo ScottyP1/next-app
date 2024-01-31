@@ -2,22 +2,21 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import supabase from "@/utils/supabase";
-import { cookies } from 'next/headers';
 
-export default async function ItemSections({ caption }) {
-    const cookieStore = cookies()
-    const { data } = await supabase.from("Movies").select();
+export default function Row({ genre, data }) {
+    const movies = data.filter(function (item) {
+        return item.audience === genre;
+    });
     return (
         <div className="mx-auto flex flex-col justify-center mt-6 ">
-            <h1 className="text-white">{caption}</h1>
+            <h1 className="text-white text-[18px] md:text-[26px]">{genre}</h1>
             <div>
                 <div className="flex flex-row-4 gap-2 overflow-y-auto">
-                    {data.map((item, idx) => (
+                    {movies.map((item, idx) => (
                         <div key={idx} className="shrink-0">
                             <Link href={`/browse/${item.slug}`}>
                                 <Image src={supabase.storage.from('NetflixImages').getPublicUrl(item.imageCard).data.publicUrl}
-                                    alt="" width={170} height={100} className="md:w-[300px] rounded-md" />
-                                <p className="text-center text-[12px] md:text-[20px]">{item.title}</p>
+                                    alt="" width={170} height={100} className="md:w-[300px] h-[100px] md:h-[170px] rounded-md" />
                             </Link>
                         </div>
                     ))}
