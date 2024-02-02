@@ -11,7 +11,7 @@ export default function Nav() {
     return (
         <>
             {status === "authenticated" ?
-                <div className="navbar bg-[#0000009d] p-3 sticky top-0 z-40">
+                <div className='navbar bg-[#0000009d] p-3 sticky top-0' style={{ zIndex: 5000 }}>
                     <div className="flex-1">
                         <Link className="text-3xl font-bold font-heading" href='/browse'><Image src='/images/Netflix_Logo.png' alt="logo" width={95} height={95} /></Link>
                         <ul className="flex ml-4">
@@ -31,7 +31,7 @@ export default function Nav() {
                             <li><a onClick={() => signOut()}>Logout</a></li>
                         </ul>
                     </div>
-                </div>
+                </div >
                 :
                 <div className="navbar bg-[#0000009d] p-3 sticky top-0">
                     <div className="flex-1">
