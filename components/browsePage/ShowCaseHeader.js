@@ -14,9 +14,9 @@ export default async function ShowCaseHeader({ title }) {
 
     return (
         <>
-            <header className="bg-FILM">
+            <header className="bg-FILM ">
                 <video poster={supabase.storage.from('NetflixImages').getPublicUrl(movie.imageBg).data.publicUrl}
-                    muted playsInline autoPlay className="object-cover absolute w-[430px] h-[300px] md:h-[800px] md:w-[2000px] " >
+                    muted playsInline autoPlay className="object-cover absolute w-[425px] left-[4px] h-[300px] md:h-[800px] md:w-[2000px] " >
                     <source src={supabase.storage.from('NetflixImages').getPublicUrl(movie.video).data.publicUrl} type="video/mp4" />
                 </video>
             </header>

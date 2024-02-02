@@ -6,7 +6,7 @@ export default async function LayoutPage({ type, title }) {
         <div className="text-white w-screen ">
             <div>
                 <ShowCaseHeader title={title} />
-                <main className="p-2 relative top-[90px] md:top-[450px]">
+                <main className="p-2 relative top-[90px] md:top-[450px] pb-[50px]  overflow-x-hidden">
                     <RowSection type={type} />
                 </main>
             </div >

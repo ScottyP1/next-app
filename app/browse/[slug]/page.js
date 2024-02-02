@@ -3,6 +3,7 @@ import Image from 'next/image';
 import supabase from "@/utils/supabase";
 import { cookies } from 'next/headers';
 
+
 export default async function MovieDetails({ params }) {
     const cookieStore = cookies()
     const { data, error } = await supabase
