@@ -13,7 +13,7 @@ export default function Row({ genre, data }) {
             <div>
                 <div className="flex flex-row-4 gap-2 overflow-y-auto">
                     {movies.map((item, idx) => (
-                        <div key={idx} className="shrink-0">
+                        <div key={idx} className="shrink-0 last:pr-3">
                             <Link href={`/browse/${item.slug}`}>
                                 <Image src={supabase.storage.from('NetflixImages').getPublicUrl(item.imageCard).data.publicUrl}
                                     alt="" width={170} height={100} className="md:w-[300px] h-[100px] md:h-[170px] rounded-md" />

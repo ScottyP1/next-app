@@ -8,7 +8,7 @@ export default async function RowSection({ type }) {
     const { data } = await supabase
         .from('Movies')
         .select()
-        .eq('category', type);
+        .eq('category', type)
 
     return (
         <div className="relative top-[30px] md:top-[100px] w-screen">
